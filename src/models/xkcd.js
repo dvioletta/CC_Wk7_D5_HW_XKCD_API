@@ -6,7 +6,7 @@ const Xkcd = function() {
 }
 
 Xkcd.prototype.getData = function(comic){
-  const url = 'https://xkcd.now.sh/614';
+  const url = 'https://xkcd.now.sh/34';
   const request = new RequestHelper(url);
   request.get()
   .then((data)=>{

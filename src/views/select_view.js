@@ -1,4 +1,5 @@
 const PubSub = require('../helper/pub_sub');
+const InfoView = require('./info_view')
 
 const SelectView = function(container){
   this.container = container;
@@ -13,10 +14,8 @@ SelectView.prototype.bindEvents = function(){
 };
 
 SelectView.prototype.render = function(){
-  this.comic.forEach((comic)=>{
-    const infoView = new InfoView(this.container, comic)
-    infoView.render();
-  })
-}
+  const infoView = new InfoView(this.container, this.comic)
+  infoView.render();
+};
 
 module.exports = SelectView
