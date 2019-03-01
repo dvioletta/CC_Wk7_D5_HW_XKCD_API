@@ -1,1 +1,9 @@
-`https://xkcd.com/${user_input}/info.0.json`
+const SelectView = require('./view/select_view.js');
+const Xkcd = require('./model/xkcd.js');
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('JavaScript Loaded');
+
+
+
+});
