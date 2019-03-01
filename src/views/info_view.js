@@ -1,6 +1,16 @@
+const PubSub = require('../helper/pub_sub');
+
 const InfoView = function(comicContainer, comic) {
   this.comic = comic;
   this.comicContainer = comicContainer;
+};
+
+InfoView.prototype.bindEvents = function(){
+  PubSub.subscribe('Xkcd:Comic-ready', (evt) =>{
+    this.comic = evt.detail;
+    console.log("comic", this.comic);
+    this.render();
+  });
 };
 
 InfoView.prototype.render = function() {

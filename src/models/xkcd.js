@@ -5,12 +5,11 @@ const Xkcd = function() {
   this.comic = [];
 }
 
-Xkcd.prototype.getData = function(comic){
-  const url = 'https://xkcd.now.sh/34';
+Xkcd.prototype.getData = function(comicId){
+  const url = `https://xkcd.now.sh/${comicId}`;
   const request = new RequestHelper(url);
   request.get()
   .then((data)=>{
-    console.log(data)
     this.data = data;
     PubSub.publish('Xkcd:Comic-ready', this.data);
   })
@@ -20,4 +19,4 @@ Xkcd.prototype.getData = function(comic){
 
 module.exports = Xkcd;
 
-// `https://xkcd.com/${user_input}/info.0.json`
+// `https://xkcd.now.sh/${comicId}`
