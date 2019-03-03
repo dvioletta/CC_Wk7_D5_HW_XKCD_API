@@ -8,7 +8,6 @@ const InfoView = function(comicContainer, comic) {
 InfoView.prototype.bindEvents = function(){
   PubSub.subscribe('Xkcd:Comic-ready', (evt) =>{
     this.comic = evt.detail;
-    console.log("comic", this.comic);
     this.render();
   });
 };
@@ -16,8 +15,8 @@ InfoView.prototype.bindEvents = function(){
 InfoView.prototype.render = function() {
   const comicContainer =document.createElement('div');
   comicContainer.classList.add('header')
+  this.comicContainer.innerHTML = '';
   this.comicContainer.appendChild(comicContainer);
-
 
   const title = this.createComicTitle();
   comicContainer.appendChild(title);

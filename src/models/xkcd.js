@@ -5,6 +5,13 @@ const Xkcd = function() {
   this.comic = [];
 }
 
+Xkcd.prototype.bindEvents = function () {
+  PubSub.subscribe('SelectView:number-submitted', (evt) => {
+    const comicId = evt.detail;
+    this.getData(comicId);
+  });
+};
+
 Xkcd.prototype.getData = function(comicId){
   const url = `https://xkcd.now.sh/${comicId}`;
   const request = new RequestHelper(url);
