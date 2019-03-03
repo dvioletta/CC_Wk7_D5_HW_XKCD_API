@@ -24,6 +24,10 @@ InfoView.prototype.render = function() {
   comicContainer.appendChild(image);
   const altText = this.createAltText();
   comicContainer.appendChild(altText);
+  const numText = this.createNumText();
+  comicContainer.appendChild(numText);
+
+
 }
 
 InfoView.prototype.createComicTitle = function (){
@@ -45,6 +49,13 @@ InfoView.prototype.createAltText = function() {
   altText.textContent = this.comic.alt
 
   return altText
+}
+
+InfoView.prototype.createNumText = function() {
+  const numText = document.createElement('h3');
+  numText.textContent = `Episode:  ${this.comic.num}`
+
+  return numText
 }
 
 module.exports = InfoView
