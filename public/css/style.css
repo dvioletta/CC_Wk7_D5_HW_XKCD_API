@@ -1,0 +1,26 @@
+body{
+  background-color: #96A8C8;
+  text-align: center;
+  font-size: 16px;
+  font-variant: small-caps;
+  font-family: Lucida,Helvetica,sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  position: absolute;
+  left: 50%;
+  width: 780px;
+  margin-left: -390px;
+}
+
+
+
+form {
+  display: inline-flex;
+
+}
+
+h3{
+  font-family: Lucida,Helvetica,sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
